@@ -12,7 +12,7 @@
 <body>
 
     <div class="toggle-container">
-        <button class="toggle-button">
+        <button class="toggle-button" onclick="felca()">
             Maestria
         </button>
     </div>
@@ -20,7 +20,10 @@
     <main>
         <div class="content-container">
             <div class="content">
+                
+                <!-- container -->
                 <div class="card" id="ally1">
+                    <!-- hero content -->
                     <div class="hero-content">
                         <p>Darius</p>
                         <div class="info">
@@ -33,24 +36,33 @@
    
                         </div>
                     </div>
-                    <div class="maestry-content" style="display: none"> 
+
+                    <!-- mastery content -->
+                    <div class="mastery-content" style="display: none"> 
                         <p>
                             conteúdo de maestrias
                         </p>
                     </div>
-
                 </div>
+
                 <div class="card" id="ally2">
-                    <p>Sejuani</p>
-                    <div class="info">
-                        <img src="img/flash.jpg" alt="" style="border-radius: 50%;">
-                        <img src="img/icon1.jpg" alt="" style="border-radius: 50%;">
-                        <div class="spell">
-                            <img src="img/flash.jpg" alt="">
-                            <img src="img/flash.jpg" alt="">
+                    <div class="hero-content">
+                        <p>Sejuani</p>
+                        <div class="info">
+                            <img src="img/flash.jpg" alt="" style="border-radius: 50%;">
+                            <img src="img/icon1.jpg" alt="" style="border-radius: 50%;">
+                            <div class="spell">
+                                <img src="img/flash.jpg" alt="">
+                                <img src="img/flash.jpg" alt="">
+                            </div>
                         </div>
                     </div>
+                    <div class="mastery-content" style="display: none">
+                        <p>pega a seju do cariok paiiii pain games final vai toma pau da T1</p>
+                    </div>
                 </div>
+
+
                 <div class="card" id="ally3">
                     <p>Ahri</p>
                     <div class="info">
@@ -145,35 +157,29 @@
 </body>
 
 <script>
-    // após o carregamento da página
-    document.addEventListener('DOMContentLoaded', () => {
+    function felca() {
         // selecione todos os cards
         const cards = document.querySelectorAll('.card');
         
         // para cada card, faça o seguinte:
         cards.forEach(card => {
-
             // seletores de conteúdo (containers hero e mastery)
             const heroContent = card.querySelector('.hero-content');
-            const maestryContent = card.querySelector('.maestry-content');
+            const maestryContent = card.querySelector('.mastery-content');
+            
+            // verifica se o container de maestria está sendo exibido
+            // (note que isso poderia ser feito pelo container de hero também, so precisaria inverter a logica depois)
+            const isMaestryScreen = window.getComputedStyle(maestryContent, null).display;
 
-            // adicione um evento onclick para cada card 
-            card.addEventListener('click', () => {
-                // verifica se o container de maestria está sendo exibido
-                // (note que isso poderia ser feito pelo container de hero também, so precisaria inverter a logica depois)
-                const isMaestryScreen = window.getComputedStyle(maestryContent, null).display;
-
-                // isso é um toggle: esconde um container e mostra o outro de acordo com qual está sendo exibido no momento
-                if(isMaestryScreen === 'none') {
-                    heroContent.style.display = "none";
-                    maestryContent.style.display = "block";
-                } else {
-                    heroContent.style.display = "block";
-                    maestryContent.style.display = "none";
-                }
-            });
-            // felca
+            // toggle global em todos os cards
+            if(isMaestryScreen === 'none') {
+                heroContent.style.display = "none";
+                maestryContent.style.display = "block";
+            } else {
+                heroContent.style.display = "block";
+                maestryContent.style.display = "none";
+            }
         });
-    });
+    }
 </script>
 </html>
