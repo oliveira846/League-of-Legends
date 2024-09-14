@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(img/SRBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1400px;
+    height: 100vh;
+}
+.content-container{
+    width: 95%;
+    height: 100vh;
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.card{
+    width: 200px;
+    height: 360px;
+    background-color: brown;
+    margin: 10px;
+    flex-flow: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 86%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-image: linear-gradient(to bottom, gold, gray) 8;
+    border-width: 2px;
+    border-style: solid;
+    p{
+        color: aliceblue;
+        font-size: 1.5em;
+    }
+    
+}
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+    
+}
+.content-container>.content:nth-child(2){
+    
+}
+#ally1{
+    background-image: url(img/darius.webp);
+    background-position: 60% center;
+}
+#ally2{
+    background-image: url(img/seju.webp);
+    background-position: 60% center;
+}
+#ally3{
+    background-image: url(img/ahri.webp);
+    background-position: 49% center;
+}
+#ally4{
+    background-image: url(img/jhin.webp);
+    background-position: 60% center;
+}
+#ally5{
+    background-image: url(img/nami.webp);
+    background-position: 80% center;
+}
+#enemy1{
+    background-image: url(img/fiora.webp);
+    background-position: 80% center;
+}
+#enemy2{
+    background-image: url(img/leesin.jpg);
+    background-position: 80% center;    
+}
+#enemy3{
+    background-image: url(img/hwei.jpg);
+    background-position: 50% center;    
+}
+#enemy4{
+    background-image: url(img/jinx.jpg);
+    background-position: 80% center;    
+}
+#enemy5{
+    background-image: url(img/pyke.jpg);
+    background-position: 50% center;    
+}
+.info{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to top, rgba(20, 20, 20, 0.897) 70%, transparent);
+    height: 50px;
+    width: 197px;
+}
+
+.info > img{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    
+}
+
+.spell{
+    margin: 5px;
+    
+    
+
+    img{
+        width: 20px;
+        
+    }
+}
